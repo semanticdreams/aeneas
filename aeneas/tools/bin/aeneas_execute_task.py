@@ -6,7 +6,7 @@
 #
 # Copyright (C) 2012-2013, Alberto Pettarin (www.albertopettarin.it)
 # Copyright (C) 2013-2015, ReadBeyond Srl   (www.readbeyond.it)
-# Copyright (C) 2015-2017, Alberto Pettarin (www.albertopettarin.it)
+# Copyright (C) 2015-2018, Alberto Pettarin (www.albertopettarin.it)
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -22,32 +22,34 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Download an audio file from a YouTube video.
+Execute a Task, that is, a pair of audio/text files
+and a configuration string.
 """
 
 from __future__ import absolute_import
 from __future__ import print_function
 import sys
 
-from aeneas.tools.download import DownloadCLI
+from aeneas.tools.execute_task import ExecuteTaskCLI
 
 __author__ = "Alberto Pettarin"
 __email__ = "aeneas@readbeyond.it"
 __copyright__ = """
     Copyright 2012-2013, Alberto Pettarin (www.albertopettarin.it)
     Copyright 2013-2015, ReadBeyond Srl   (www.readbeyond.it)
-    Copyright 2015-2017, Alberto Pettarin (www.albertopettarin.it)
+    Copyright 2015-2018, Alberto Pettarin (www.albertopettarin.it)
 """
 __license__ = "GNU AGPL 3"
 __status__ = "Production"
-__version__ = "1.7.3"
+__version__ = "1.7.4"
 
 
 def main():
     """
-    Download an audio file from a YouTube video.
+    Execute a Task, that is, a pair of audio/text files
+    and a configuration string.
     """
-    DownloadCLI(invoke="aeneas_download").run(arguments=sys.argv)
+    ExecuteTaskCLI(invoke="aeneas_execute_task").run(arguments=sys.argv)
 
 
 if __name__ == '__main__':

@@ -6,7 +6,7 @@
 #
 # Copyright (C) 2012-2013, Alberto Pettarin (www.albertopettarin.it)
 # Copyright (C) 2013-2015, ReadBeyond Srl   (www.readbeyond.it)
-# Copyright (C) 2015-2017, Alberto Pettarin (www.albertopettarin.it)
+# Copyright (C) 2015-2018, Alberto Pettarin (www.albertopettarin.it)
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -506,13 +506,13 @@ class TestTextFile(unittest.TestCase):
         self.filter_ignore_regex("word", [u"word abc word"], [u"abc"])
 
     def test_filter_ignore_regex_parenthesis(self):
-        self.filter_ignore_regex("\(.*?\)", [u"(CHAR) bla bla bla"], [u"bla bla bla"])
+        self.filter_ignore_regex(r"\(.*?\)", [u"(CHAR) bla bla bla"], [u"bla bla bla"])
 
     def test_filter_ignore_regex_brackets(self):
-        self.filter_ignore_regex("\[.*?\]", [u"[CHAR] bla bla bla"], [u"bla bla bla"])
+        self.filter_ignore_regex(r"\[.*?\]", [u"[CHAR] bla bla bla"], [u"bla bla bla"])
 
     def test_filter_ignore_regex_braces(self):
-        self.filter_ignore_regex("\{.*?\}", [u"{CHAR} bla bla bla"], [u"bla bla bla"])
+        self.filter_ignore_regex(r"\{.*?\}", [u"{CHAR} bla bla bla"], [u"bla bla bla"])
 
     def test_filter_ignore_regex_entire_match(self):
         self.filter_ignore_regex("word", [u"word"], [u""])

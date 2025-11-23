@@ -6,7 +6,7 @@
 #
 # Copyright (C) 2012-2013, Alberto Pettarin (www.albertopettarin.it)
 # Copyright (C) 2013-2015, ReadBeyond Srl   (www.readbeyond.it)
-# Copyright (C) 2015-2017, Alberto Pettarin (www.albertopettarin.it)
+# Copyright (C) 2015-2018, Alberto Pettarin (www.albertopettarin.it)
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -22,32 +22,32 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Plot a waveform and labels to file.
+Convert a sync map from a format to another.
 """
 
 from __future__ import absolute_import
 from __future__ import print_function
 import sys
 
-from aeneas.tools.plot_waveform import PlotWaveformCLI
+from aeneas.tools.convert_syncmap import ConvertSyncMapCLI
 
 __author__ = "Alberto Pettarin"
 __email__ = "aeneas@readbeyond.it"
 __copyright__ = """
     Copyright 2012-2013, Alberto Pettarin (www.albertopettarin.it)
     Copyright 2013-2015, ReadBeyond Srl   (www.readbeyond.it)
-    Copyright 2015-2017, Alberto Pettarin (www.albertopettarin.it)
+    Copyright 2015-2018, Alberto Pettarin (www.albertopettarin.it)
 """
 __license__ = "GNU AGPL 3"
 __status__ = "Production"
-__version__ = "1.7.3"
+__version__ = "1.7.4"
 
 
 def main():
     """
-    Plot a waveform and labels to file.
+    Convert a sync map from a format to another.
     """
-    PlotWaveformCLI(invoke="aeneas_plot_waveform").run(arguments=sys.argv)
+    ConvertSyncMapCLI(invoke="aeneas_convert_syncmap").run(arguments=sys.argv)
 
 
 if __name__ == '__main__':

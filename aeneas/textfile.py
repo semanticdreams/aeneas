@@ -6,7 +6,7 @@
 #
 # Copyright (C) 2012-2013, Alberto Pettarin (www.albertopettarin.it)
 # Copyright (C) 2013-2015, ReadBeyond Srl   (www.readbeyond.it)
-# Copyright (C) 2015-2017, Alberto Pettarin (www.albertopettarin.it)
+# Copyright (C) 2015-2018, Alberto Pettarin (www.albertopettarin.it)
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -780,7 +780,7 @@ class TextFile(Loggable):
             indent = u" " * 2 * (level - 1)
             self.log([u"%sRegex for %s: '%s'", indent, attribute_name, regex_string])
             regex = re.compile(r".*\b" + regex_string + r"\b.*")
-            return root.findAll(attrs={attribute_name: regex})
+            return root.find_all(attrs={attribute_name: regex})
         #
         # TODO better and/or parametric parsing,
         #      for example, removing tags but keeping text, etc.
@@ -953,7 +953,7 @@ class TextFile(Loggable):
         ids = []
         filter_attributes = filter_attributes()
         self.log([u"Finding elements matching attributes '%s'", filter_attributes])
-        nodes = soup.findAll(attrs=filter_attributes)
+        nodes = soup.find_all(attrs=filter_attributes)
         for node in nodes:
             try:
                 f_id = gf.safe_unicode(node["id"])
